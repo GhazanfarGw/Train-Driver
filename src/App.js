@@ -1,5 +1,6 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import React, { useEffect, useState } from 'react';
+
 import Home from "./Home/index";
 import About from "./About/index";
 // import Course from "./Course/index";
@@ -7,24 +8,32 @@ import MockInter from "./Mock Inter/index";
 import Faqs from "./FAQs/index";
 import Interview from "./Interview Contract/index";
 import Preloader from "./Home/Preload";
+import ScrollToTop from "./Home/ScrollToTop";
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation(); // current route location
 
-  useEffect(() => {
-    // Simulate a delay to mimic content loading
-    setTimeout(() => {
+    useEffect(() => {
+    // جب بھی route change ہو، loading true کریں
+    setLoading(true);
+
+    // simulate data fetching or preload
+    const timer = setTimeout(() => {
       setLoading(false);
-    }, 1000); // Adjust the delay as needed
+    }, 800); // loading duration adjust کریں
 
-    // You can replace the above setTimeout with your actual data fetching logic.
-  }, []);
+    return () => clearTimeout(timer); // cleanup
+  }, [location.pathname]); // dependency: ہر بار route change پر trigger
+
 
   return (
     <>
       {loading ? (
         <Preloader />
       ) : (
+        <>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={ <Home/> } />
           <Route path="/about-us" element={ <About/> } />
@@ -33,6 +42,7 @@ function App() {
           <Route path="/faqs" element={ <Faqs/> } />
           <Route path="/book-now" element={ <Interview/> } />
         </Routes>
+        </>
       )}
     </>
 
