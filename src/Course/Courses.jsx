@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import { BookOpen, ClipboardCheck, Brain, FileText } from "lucide-react";
 
 const courses = [
@@ -8,7 +9,8 @@ const courses = [
       "A structured interview preparation course designed for candidates applying for UK train driver roles.",
     price: "£49.99",
     color: "#2E4C86",
-    icon: <BookOpen size={28} />,
+    icon: <BookOpen size={26} />,
+    badge: "Best Seller",
   },
   {
     title: "Driver Manager Interview Preparation Course",
@@ -16,16 +18,15 @@ const courses = [
       "Designed for candidates attending a Train Driver Manager Interview.",
     price: "£49.99",
     color: "#2E4C86",
-    icon: <ClipboardCheck size={28} />,
+    icon: <ClipboardCheck size={26} />,
   },
   {
     title: "Train Driver Assessment Preparation Guide",
     description:
-      "Helps candidates prepare for psychometric assessments with practical tips.",
+      "Prepare for psychometric assessments with practical tips.",
     price: "£14.99",
     color: "#B9772E",
-    icon: <Brain size={28} />,
-    fade: true,
+    icon: <Brain size={26} />,
   },
   {
     title: "Train Driver Application Preparation Workbook",
@@ -33,43 +34,55 @@ const courses = [
       "A practical workbook to help candidates complete strong applications.",
     price: "£14.99",
     color: "#B9772E",
-    icon: <FileText size={28} />,
-    fade: true,
+    icon: <FileText size={26} />,
   },
 ];
 
 function InterviewPreparation() {
   return (
-    <section className="w-full md:py-40 py-20 md:px-10 px-5 bg-[#ECE9F4]">
+    <section className="w-full bg-gradient-to-b from-[#EEF1F6] to-white md:py-40 py-20 md:px-10 px-5">
       
       {/* Heading */}
       <div className="max-w-3xl mx-auto text-center pt-10">
-        <h2 className="text-2xl md:text-4xl font-bold text-[#2E4C86]">
+        <h2 className="text-3xl md:text-5xl font-bold text-[#2E4C86]">
           Interview Preparation Resources
         </h2>
 
-        <p className="mt-4 text-gray-600 text-sm md:text-base leading-relaxed">
-          Explore our professionally designed courses and guides to help you
-          succeed in train driver recruitment.
+        <p className="mt-4 text-gray-600 text-sm md:text-lg leading-relaxed">
+          Premium courses and guides to help you succeed in train driver recruitment.
         </p>
 
-        <div className="w-20 h-1 bg-[#2E4C86] mx-auto mt-4"></div>
+        <div className="w-24 h-1 bg-gradient-to-r from-[#2E4C86] to-[#B9772E] mx-auto mt-5 rounded-full"></div>
       </div>
 
       {/* Space */}
-      <div className="mt-12"></div>
+      <div className="mt-16"></div>
 
       {/* Cards */}
-      <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-8">
+      <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8">
         {courses.map((course, index) => (
-          <div
+          <motion.div
             key={index}
-            className="bg-white hover:shadow-xl hover:-translate-y-2 transition-all duration-300 overflow-hidden border rounded-xl p-6"
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            viewport={{ once: true }}
+            className="relative backdrop-blur-lg bg-white/70 border border-white/40 shadow-lg rounded-2xl p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
           >
+            {/* Badge */}
+            {course.badge && (
+              <div className="absolute top-4 right-4 bg-[#B9772E] text-white text-xs px-3 py-1 rounded-full shadow">
+                {course.badge}
+              </div>
+            )}
+
             {/* Icon */}
             <div
-              className="w-12 h-12 flex items-center justify-center rounded-lg mb-4"
-              style={{ backgroundColor: course.color, color: "white" }}
+              className="w-12 h-12 flex items-center justify-center rounded-xl mb-4 shadow"
+              style={{
+                background: `linear-gradient(135deg, ${course.color}, #00000020)`,
+                color: "white",
+              }}
             >
               {course.icon}
             </div>
@@ -86,7 +99,7 @@ function InterviewPreparation() {
 
             {/* Price */}
             <p
-              className="mt-4 text-lg font-bold"
+              className="mt-4 text-xl font-bold"
               style={{ color: course.color }}
             >
               {course.price}
@@ -95,12 +108,14 @@ function InterviewPreparation() {
             {/* Button */}
             <a
               href="/book-now"
-              className="inline-block mt-4 px-5 py-2 text-white shadow hover:opacity-90 rounded-md"
-              style={{ backgroundColor: course.color }}
+              className="inline-block mt-5 px-6 py-2.5 text-white rounded-lg shadow-md hover:shadow-lg transition"
+              style={{
+                background: `linear-gradient(135deg, ${course.color}, #00000030)`,
+              }}
             >
-              Book Now
+              Book Now →
             </a>
-          </div>
+          </motion.div>
         ))}
       </div>
 
