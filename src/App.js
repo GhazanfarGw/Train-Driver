@@ -9,21 +9,27 @@ import Faqs from "./FAQs/index";
 import Interview from "./Interview Contract/index";
 import Preloader from "./Home/Preload";
 import ScrollToTop from "./Home/ScrollToTop";
+import PrivacyPolicy from "./Privacy Poilcy/Index";
+import Terms from "./Terms and Conditions/Index";
+import RefundPolicy from "./Refund Policy/Index";
+import CookiePolicy from "./Cookie Policy/Index";
 
 function App() {
   const [loading, setLoading] = useState(true);
   const location = useLocation(); // current route location
 
     useEffect(() => {
+    // جب بھی route change ہو، loading true کریں
     setLoading(true);
 
     // simulate data fetching or preload
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 800); // loading duration adjust
+    }, 800); // loading duration adjust کریں
 
     return () => clearTimeout(timer); // cleanup
-  }, [location.pathname]);
+  }, [location.pathname]); // dependency: ہر بار route change پر trigger
+
 
   return (
     <>
@@ -38,7 +44,11 @@ function App() {
           <Route path="/courses" element={ <Course/> } />
           <Route path="/mock-interviews" element={ <MockInter/> } />
           <Route path="/faqs" element={ <Faqs/> } />
-          <Route path="/buy-now" element={ <Interview/> } />
+          <Route path="/book-now" element={ <Interview/> } />
+          <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
+          <Route path="/terms-and-conditions" element={ <Terms/> } />
+          <Route path="/refund-policy" element={ <RefundPolicy/> } />
+          <Route path="/cookie-policy" element={ <CookiePolicy/> } /> 
         </Routes>
         </>
       )}
