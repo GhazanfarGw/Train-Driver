@@ -5,6 +5,7 @@ import { BookOpen, ClipboardCheck, Brain, FileText } from "lucide-react";
 const courses = [
   {
     title: "Structured Interview Preparation Course",
+    link: "https://buy.stripe.com/7sY6oA5vUbCv3hO6MubQY05",
     description:
       "A structured interview preparation course designed for candidates applying for UK train driver roles.",
     price: "£49.99",
@@ -14,6 +15,7 @@ const courses = [
   },
   {
     title: "Driver Manager Interview Preparation Course",
+    link: "https://buy.stripe.com/3cI00ce2qcGz2dK8UCbQY04",
     description:
       "Designed for candidates attending a Train Driver Manager Interview.",
     price: "£49.99",
@@ -22,6 +24,7 @@ const courses = [
   },
   {
     title: "Train Driver Assessment Preparation Guide",
+    link: "https://buy.stripe.com/5kQdR26zYgWP05C4EmbQY02",
     description:
       "Prepare for psychometric assessments with practical tips.",
     price: "£14.99",
@@ -30,6 +33,7 @@ const courses = [
   },
   {
     title: "Train Driver Application Preparation Workbook",
+    link: "https://buy.stripe.com/8x25kw3nMeOHdWs9YGbQY03",
     description:
       "A practical workbook to help candidates complete strong applications.",
     price: "£14.99",
@@ -44,7 +48,7 @@ function InterviewPreparation() {
       
       {/* Heading */}
       <div className="max-w-3xl mx-auto text-center pt-10">
-        <h2 className="text-3xl md:text-5xl font-bold text-[#2E4C86]">
+        <h2 className="text-3xl md:text-5xl font-semibold mb-4 text-[#2E4C86]">
           Interview Preparation Resources
         </h2>
 
@@ -67,7 +71,7 @@ function InterviewPreparation() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             viewport={{ once: true }}
-            className="relative backdrop-blur-lg bg-white/70 border border-white/40 shadow-lg rounded-2xl p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
+            className="relative backdrop-blur-lg bg-white/70 border border-white/40 shadow-lg p-6 hover:shadow-2xl hover:-translate-y-2 transition-all duration-300"
           >
             {/* Badge */}
             {course.badge && (
@@ -107,14 +111,14 @@ function InterviewPreparation() {
 
             {/* Button */}
             <a
-              href="/buy-now"
-              className="inline-block mt-5 px-6 py-2.5 text-white rounded-lg shadow-md hover:shadow-lg transition"
-              style={{
-                background: `linear-gradient(135deg, ${course.color}, #00000030)`,
-              }}
-            >
-              Buy Now →
-            </a>
+            href={course.link}
+            className="inline-block mt-5 px-6 py-2.5 text-white shadow-md hover:shadow-lg transition"
+            style={{
+              background: course.color,
+            }}
+          >
+            Buy Now →
+          </a>
           </motion.div>
         ))}
       </div>
