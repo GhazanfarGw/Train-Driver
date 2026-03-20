@@ -44,7 +44,7 @@ function App() {
           <Route path="/courses" element={ <Course/> } />
           <Route path="/mock-interviews" element={ <MockInter/> } />
           <Route path="/faqs" element={ <Faqs/> } />
-          <Route path="/book-now" element={ <Interview/> } />
+          <Route path="/buy-now" element={ <Interview/> } />
           <Route path="/privacy-policy" element={ <PrivacyPolicy/> } />
           <Route path="/terms-and-conditions" element={ <Terms/> } />
           <Route path="/refund-policy" element={ <RefundPolicy/> } />
