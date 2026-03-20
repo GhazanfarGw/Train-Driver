@@ -111,7 +111,7 @@ function InterviewPreparation() {
       <div className="text-center mt-10">
 
         <button className="bg-[#2E4C86] text-white px-8 py-3 shadow hover:opacity-90">
-            <a href="/book-now" className="text-white no-underline">
+            <a href="/buy-now" className="text-white no-underline">
               Book a Mock Interview
             </a>
         </button>
