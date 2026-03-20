@@ -107,7 +107,7 @@ function InterviewPreparation() {
 
             {/* Button */}
             <a
-              href="/book-now"
+              href="/buy-now"
               className="inline-block mt-5 px-6 py-2.5 text-white rounded-lg shadow-md hover:shadow-lg transition"
               style={{
                 background: `linear-gradient(135deg, ${course.color}, #00000030)`,
