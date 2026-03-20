@@ -26,10 +26,10 @@ function Contact () {
         message: message,
     };
     emailjs.send(
-      'service_twtnibd',
-      'template_y2j68gl',
-      templateParams,
-      'm5W1vJH1hNlv0MfTj'
+      'service_twtn',
+      'template_y2j6',
+      ,
+      '
     )
       .then((response) => {
         console.log('SUCCESS!', response.status, response.text);
