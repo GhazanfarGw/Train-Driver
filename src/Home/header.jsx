@@ -67,10 +67,10 @@ function Navbar() {
           ))}
 
           <Link
-            to="/book-now"
+            to="/buy-now"
             className="px-6 py-3 bg-[#324E91] text-white shadow font-bold"
           >
-            Book Now
+            Buy Now
           </Link>
         </nav>
 
@@ -118,11 +118,11 @@ function Navbar() {
             </li>
           ))}
           <Link
-            to="/book-now"
+            to="/buy-now"
             onClick={() => setOpen(false)}
             className="inline-block mt-6 px-6 py-3 bg-[#324E91] text-white font-bold shadow"
           >
-            Book Now
+            Buy Now
           </Link>
         </ul>
       </div>
