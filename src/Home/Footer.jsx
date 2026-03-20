@@ -5,7 +5,7 @@ const Footer = () => {
         <div className='bg-[#324E91]'>
             <div className='max-w-7xl mx-auto justify-center md:pt-20 md:pb-10 md:px-10 py-10'>
                 <h1 className='text-[#aaa] md:text-base text-sm justify-center md:pb-5 px-5'>
-                    Website last updated: March 19, 2026
+                    Website last updated: March 20, 2026
                 </h1>
                 <span className="md:px-0">
                     <a href="/">
@@ -104,11 +104,33 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-                <div className='mx-auto justify-center px-5 border-t py-5 border-[#136690]'>
+                <div className='mx-auto justify-center md:px-5 border-t py-5 border-[#136690]'>
                     <div className=''>
                         <p className='md:text-sm text-xs text-[#C3CDD3] text-center'>
                             Train Driver Prep. © 2026. All right reserved.
                         </p>
+                    </div>
+                </div>
+                <div className='mx-auto grid md:grid-cols-4 text-xs justify-center'>
+                    <div>
+                        <a className='text-[#C3CDD3] underline justify-center text-center mx-auto' href="./privacy-policy">
+                            <p>Privacy Policy & Data Protection</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a className='text-[#C3CDD3] underline justify-center text-center mx-auto' href="./cookie-policy">
+                            <p>Cookie Policy</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a className='text-[#C3CDD3] underline justify-center text-center mx-auto' href="./refund-policy">
+                            <p>Refund Policy</p>
+                        </a>
+                    </div>
+                    <div>
+                        <a className='text-[#C3CDD3] underline justify-center text-center mx-auto' href="./terms-and-conditions">
+                            <p>Terms and Conditions</p>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -118,5 +140,3 @@ const Footer = () => {
 
 
 export default Footer;
-
-
