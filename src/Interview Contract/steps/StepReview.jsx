@@ -24,17 +24,30 @@ export default function StepReview({ formData, back }) {
       },
       "m5W1vJH1hNlv0MfTj"
     )
-
+  
     .then(() => {
+    const stripeLinks = {
+      "Structured Interview Preparation Course":
+        "https://buy.stripe.com/7sY6oA5vUbCv3hO6MubQY05",
 
-      if (formData.course?.price === 49.99) {
-        window.location.href = "https://buy.stripe.com/7sY6oA5vUbCv3hO6MubQY05";
-      } 
-      else if (formData.course?.price === 99.99) {
-        window.location.href = "https://buy.stripe.com/6oU4gs4rQ9un2dKb2KbQY00";
-      }
+      "Driver Manager Interview Preparation Course":
+        "https://buy.stripe.com/3cI00ce2qcGz2dK8UCbQY04",
 
-    })
+      "Train Driver Assessment Preparation Guide":
+        "https://buy.stripe.com/5kQdR26zYgWP05C4EmbQY02",
+
+      "Train Driver Application Preparation Workbook":
+        "https://buy.stripe.com/8x25kw3nMeOHdWs9YGbQY03",
+    };
+
+    const selectedCourseName = formData.course?.name;
+
+    if (stripeLinks[selectedCourseName]) {
+      window.location.href = stripeLinks[selectedCourseName];
+    } else {
+      console.error("No Stripe link found for selected course");
+    }
+  })
 
     .catch((error) => {
       console.log("Email Error:", error);
@@ -113,7 +126,7 @@ export default function StepReview({ formData, back }) {
               </p>
             </div>
 
-            <div className="text-right">
+            <div className="">
               <p className="text-sm text-gray-400">
                 Total Price
               </p>
@@ -152,8 +165,6 @@ export default function StepReview({ formData, back }) {
         </div>
 
       </div>
-
     </div>
-
   );
 }
