@@ -113,7 +113,7 @@ function InterviewPreparation() {
                 background: `linear-gradient(135deg, ${course.color}, #00000030)`,
               }}
             >
-              Book Now →
+              Buy Now →
             </a>
           </motion.div>
         ))}
