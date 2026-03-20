@@ -36,7 +36,7 @@ export default function HeroSection() {
 
           <div className="flex flex-col sm:flex-row gap-4">
             <button className="px-6 py-3 bg-[#324E91] text-white shadow">
-              <a href="/book-now" className="text-white no-underline">
+              <a href="/buy-now" className="text-white no-underline">
                 Book a Mock Interview
               </a>
             </button>
