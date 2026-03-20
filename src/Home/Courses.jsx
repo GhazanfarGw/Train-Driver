@@ -51,7 +51,7 @@ function InterviewPreparation() {
               </p>
 
               <p className="mt-4 text-lg font-semibold text-[#2E4C86]">
-                £49.99 <span className="text-gray-400 font-normal">Introductory Price £80</span>
+                £49.99
               </p>
 
               <button className="mt-4 bg-[#2E4C86] text-white px-5 py-2 shadow hover:opacity-90">
@@ -92,7 +92,7 @@ function InterviewPreparation() {
               </p>
 
               <p className="mt-4 text-lg font-semibold text-[#B9772E]">
-                £30 ~ £40
+                £49.99
               </p>
 
               <button className="mt-4 bg-[#B9772E] text-white px-5 py-2 shadow hover:opacity-90">
