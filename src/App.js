@@ -15,17 +15,15 @@ function App() {
   const location = useLocation(); // current route location
 
     useEffect(() => {
-    // جب بھی route change ہو، loading true کریں
     setLoading(true);
 
     // simulate data fetching or preload
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 800); // loading duration adjust کریں
+    }, 800); // loading duration adjust
 
     return () => clearTimeout(timer); // cleanup
-  }, [location.pathname]); // dependency: ہر بار route change پر trigger
-
+  }, [location.pathname]);
 
   return (
     <>
@@ -40,7 +38,7 @@ function App() {
           <Route path="/courses" element={ <Course/> } />
           <Route path="/mock-interviews" element={ <MockInter/> } />
           <Route path="/faqs" element={ <Faqs/> } />
-          <Route path="/book-now" element={ <Interview/> } />
+          <Route path="/buy-now" element={ <Interview/> } />
         </Routes>
         </>
       )}
